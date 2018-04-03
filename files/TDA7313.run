@@ -1,0 +1,15 @@
+return function (s)  
+  local t = {
+   {mode="Volume",value = s.volume},
+   {mode="LF",value = s.lf},
+   {mode="RF",value = s.rf},
+   {mode="LR",value = s.lr},
+   {mode="RR",value = s.rr},
+   {mode="input",value = s.input},
+   {mode="bass",value = s.bass},
+   {mode="treble",value = s.treble},
+  }
+  i2c.setup(0, 4, 3, i2c.SLOW)
+  print(dofile("TDA7313.lua")(t))
+ return r
+end

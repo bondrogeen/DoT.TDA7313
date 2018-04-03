@@ -1,0 +1,30 @@
+{
+  "name": "TDA7313",
+  "type": "module",
+  "description": "Digital controlled stereo audio processor with loudness.",
+  "version": "0.0.2",
+  "homepage": "",
+  "page": ["TDA7313_light.html", "TDA7313_dark.html"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bondrogeen/TDA7313"
+  },
+  "keywords": ["esp8266", "lua", "nodemcu", "TDA7313"],
+  "author": {
+    "name": "bondrogeen",
+    "email": "bondrogeen@gmail.com"
+  },
+  "native": {
+    "run": false,
+    "input": 1,
+    "volume": 20,
+    "lf": 15,
+    "rf": 15,
+    "lr": 15,
+    "rr": 15,
+    "bass": 8,
+    "treble": 8
+  },
+  "license": "MIT",
+  "modules": ["file", "gpio", "sjson", "i2c"]
+}

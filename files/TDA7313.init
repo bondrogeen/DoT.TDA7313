@@ -1,0 +1,11 @@
+{
+  "run": false,
+  "input": 1,
+  "volume": 20,
+  "lf": 15,
+  "rf": 15,
+  "lr": 15,
+  "rr": 15,
+  "bass": 8,
+  "treble": 8
+}
