@@ -124,6 +124,9 @@
      console.log(e);
      return
     }
+    if (!info.run){
+     alert("The module is not started !!!");
+    }
     console.log(info);
     gpio_power = info.gpio_power;
     gpio_mute = info.gpio_mute;
