@@ -3,6 +3,7 @@
 Digital controlled stereo audio processor with loudness
 
 
+
 ```lua   
 i2c.setup(0, 4, 3, i2c.SLOW)
 
@@ -27,6 +28,9 @@ print(dofile("TDA7313.lua")({mode="Volume",value = 15}))
 ```
 
 ## Changelog
+
+### 0.0.3 (2018-04-04)
+* (bondrogeen) fix bug.
 
 ### 0.0.2 (2018-04-03)
 * (bondrogeen) init.

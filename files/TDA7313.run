@@ -1,4 +1,6 @@
-return function (s)  
+return function (s)
+ local r
+ if s.run then
   local t = {
    {mode="Volume",value = s.volume},
    {mode="LF",value = s.lf},
@@ -9,7 +11,13 @@ return function (s)
    {mode="bass",value = s.bass},
    {mode="treble",value = s.treble},
   }
+  gpio.mode(s.gpio_power, gpio.OUTPUT)
+  gpio.mode(s.gpio_mute, gpio.OUTPUT)
+  gpio.write(s.gpio_power, s.power)
+  gpio.write(s.gpio_mute, s.mute)
   i2c.setup(0, 4, 3, i2c.SLOW)
   print(dofile("TDA7313.lua")(t))
+  r=true
+ end
  return r
 end

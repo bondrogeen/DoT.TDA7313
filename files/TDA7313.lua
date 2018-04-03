@@ -9,7 +9,21 @@ local function set(val)
  return r
 end
 
-local function sort(m,v)
+local function save(m,v)
+local f,o,j="TDA7313.init"
+if file.open(f,"r") then
+ o,j=pcall(sjson.decode,file.read())
+ j[m]=v
+ o,j=pcall(sjson.encode,j)
+ if o and file.open(f,"w")then
+  file.write(j)
+  file.close()
+ end
+end
+return o
+end
+
+local function sort(m,v,p)
  local r=false
  if not tonumber(v) then return false end
  v=tonumber(v)
@@ -18,6 +32,8 @@ local function sort(m,v)
   r=(v<=63 and v>=0)and set(63-v)
  elseif m=="lf"then
   r=(v<=31 and v>=0)and set(128+31-v)
+ elseif m=="power" or m=="mute" then
+  gpio.write(p, v)
  elseif m=="rf"then
   r=(v<=31 and v>=0)and set(160+31-v)
  elseif m=="lr"then
@@ -39,13 +55,14 @@ local function sort(m,v)
    r = set(127+8-v)
   end
  end
+ save(m,v)
  return r
 end
 
 return function (t)
  local x = ""
  if #t==0 then
-  x=t.mode.."="..tostring(sort(t.mode,t.value))
+  x=t.mode.."="..tostring(sort(t.mode,t.value,t.pin))
  else
   for i=1,#t do
    x=x..t[i].mode.."="..tostring(sort(t[i].mode,t[i].value))..","
