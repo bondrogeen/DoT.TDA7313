@@ -1,5 +1,5 @@
 {
-  "run": false,
+  "run": true,
   "input": 1,
   "volume": 20,
   "lf": 15,
@@ -11,5 +11,7 @@
   "power": 0,
   "mute": 0,
   "gpio_power":5,
-  "gpio_mute":6
+  "gpio_mute":6,
+  "sda":4,
+  "scl":3
   }

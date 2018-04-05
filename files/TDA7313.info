@@ -15,19 +15,102 @@
   "email": "bondrogeen@gmail.com"
  },
  "native": {
-  "run": false,
-  "input": 1,
-  "volume": 20,
-  "lf": 15,
-  "rf": 15,
-  "lr": 15,
-  "rr": 15,
-  "bass": 8,
-  "treble": 8,
-  "power": 0,
-  "mute": 0,
-  "gpio_power": 5,
-  "gpio_mute": 6
+  "run": {
+   "val":false,
+   "name":"Run"   
+  },
+  "input": {
+   "val":1,
+   "type":"select",
+   "values":[1,2,3],
+   "name":"Input"
+  },
+  "volume": {
+   "val":20,
+   "type":"number",
+   "min":0,
+   "max":63,
+   "name":"Volume"
+  },
+  "lf": {
+   "val":20,
+   "type":"number",
+   "min":0,
+   "max":31,
+   "name":"Left Front"
+  },
+  "rf": {
+   "val":20,
+   "type":"number",
+   "min":0,
+   "max":31,
+   "index":3,
+   "name":"Right Front"
+  },
+  "lr": {
+   "val":20,
+   "type":"number",
+   "min":0,
+   "max":31,
+   "name":"Left Rear"
+  },
+  "rr": {
+   "val":20,
+   "type":"number",
+   "min":0,
+   "max":31,
+   "name":"Right Rear"
+  },
+  "bass": {
+   "val":7,
+   "type":"number",
+   "min":0,
+   "max":15,
+   "name":"Bass"
+  },
+  "treble": {
+   "val":7,
+   "type":"number",
+   "min":0,
+   "max":15,
+   "name":"Treble"
+  },
+  "power": {
+   "val":0,
+   "values":[0,1],
+   "type":"select",
+   "name":"Power"
+  },
+  "mute": {
+   "val":0,
+   "values":[0,1],
+   "type":"select",
+   "name":"Mute"
+  },
+  "gpio_power": {
+   "val":5,
+   "type":"select",
+   "values":[0,1,2,3,4,5,6,7,8,9,10],
+   "name":"GPIO Power"
+  },
+  "gpio_mute": {
+   "val":6,
+   "type":"select",
+   "values":[0,1,2,3,4,5,6,7,8,9,10],
+   "name":"GPIO Mute"
+  },
+  "sda": {
+   "val":4,
+   "type":"select",
+   "values":[1,2,3,4,5,6,7,8,9,10],
+   "name":"GPIO SDA"
+  },
+  "scl": {
+   "val":3,
+   "type":"select",
+   "values":[1,2,3,4,5,6,7,8,9,10],
+   "name":"GPIO SCL"
+  }
  },
  "license": "MIT",
  "modules": ["file", "gpio", "sjson", "i2c"]

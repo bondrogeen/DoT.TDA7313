@@ -89,7 +89,7 @@
  <script>
   var gpio_mute;
   var gpio_power;
-
+  var run;
   function send(page, data, callback) {
    var req = new XMLHttpRequest();
    req.open("POST", page, true);
@@ -115,18 +115,7 @@
    }, function(res) {});
   }
 
-  function load(name, val, pin) {
-   send("TDA7313.init", {}, function(res) {
-    var info;
-    try {
-     info = JSON.parse(res);
-    } catch (e) {
-     console.log(e);
-     return
-    }
-    if (!info.run){
-     alert("The module is not started !!!");
-    }
+  function getSettings(info){
     console.log(info);
     gpio_power = info.gpio_power;
     gpio_mute = info.gpio_mute;
@@ -143,8 +132,25 @@
      } else {
       document.getElementById(item).value = info[item];
      }
-
     });
+  }
+  function load(name, val, pin) {
+   send("TDA7313.init", {}, function(res) {
+    var info;
+    try {
+     info = JSON.parse(res);
+    } catch (e) {
+     console.log(e);
+     return
+    }
+    if (!info.run){
+     run = confirm("The module is not started !!! run?");
+     if (run){
+
+     }
+    }else{
+     getSettings(info)
+    }
    });
   }
 
