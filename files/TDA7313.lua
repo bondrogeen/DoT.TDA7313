@@ -1,14 +1,11 @@
-local id=0
-local dev_addr=0x44
-
 local function set(val)
- i2c.start(id)
- local r=i2c.address(id,dev_addr,i2c.TRANSMITTER)
- i2c.write(id,val)
- i2c.stop(id)
+ i2c.start(0)
+ local r=i2c.address(0,0x44,i2c.TRANSMITTER)
+ i2c.write(0,val)
+ i2c.stop(0)
+ print(r)
  return r
 end
-
 local function save(m,v)
 local f,o,j="TDA7313.init"
 if file.open(f,"r") then
@@ -33,7 +30,7 @@ local function sort(m,v,p)
  elseif m=="lf"then
   r=(v<=31 and v>=0)and set(128+31-v)
  elseif m=="power" or m=="mute" then
-  gpio.write(p, v)
+  gpio.write(p,v) r=v
  elseif m=="rf"then
   r=(v<=31 and v>=0)and set(160+31-v)
  elseif m=="lr"then
@@ -55,19 +52,16 @@ local function sort(m,v,p)
    r = set(127+8-v)
   end
  end
- save(m,v)
+ if r then save(m,v)end
  return r
 end
 
 return function (t)
- local x = ""
- if #t==0 then
-  x=t.mode.."="..tostring(sort(t.mode,t.value,t.pin))
- else
-  for i=1,#t do
-   x=x..t[i].mode.."="..tostring(sort(t[i].mode,t[i].value))..","
+ local x,p = ""
+  for k,v in pairs(t) do
+   p = k=="mute" and t.pin_m or t.pin_p
+   x=x..k.."="..tostring(sort(k,v,p))..","
   end
    x=x:sub(0,#x-1)
- end
  return x
 end

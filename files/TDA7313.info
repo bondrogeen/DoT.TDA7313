@@ -1,7 +1,7 @@
 {
  "name": "TDA7313",
  "type": "module",
- "description": "Digital controlled stereo audio processor with loudness.",
+ "description": "Digital controlled  stereo audio processor with loudness.",
  "version": "0.0.3",
  "homepage": "",
  "page": ["TDA7313_light.html", "TDA7313_dark.html"],
@@ -87,13 +87,13 @@
    "type":"select",
    "name":"Mute"
   },
-  "gpio_power": {
+  "pin_p": {
    "val":5,
    "type":"select",
    "values":[0,1,2,3,4,5,6,7,8,9,10],
    "name":"GPIO Power"
   },
-  "gpio_mute": {
+  "pin_m": {
    "val":6,
    "type":"select",
    "values":[0,1,2,3,4,5,6,7,8,9,10],

@@ -105,20 +105,20 @@
   }
 
   function save(name, val) {
-   var pin;
-   if (name === "power") pin = gpio_power;
-   if (name === "mute") pin = gpio_mute;
-   send("TDA7313.lua", {
-    mode: name,
-    value: val,
-    pin: pin
-   }, function(res) {});
+  console.log(name +  " : "  + val);
+   var d={}
+   d[name]=val;
+   d.pin_p = gpio_power;
+   d.pin_m = gpio_mute;
+   send("TDA7313.lua", d, function(res) {
+    console.log(res);
+   });
   }
 
   function getSettings(info){
     console.log(info);
-    gpio_power = info.gpio_power;
-    gpio_mute = info.gpio_mute;
+    gpio_power = info.pin_p;
+    gpio_mute = info.pin_m;
     var list = ["input", "bass", "treble", "lr", "lf", "rf", "rr", "volume", "power", "mute"];
     list.forEach(function(item, i, arr) {
      console.log(item + " : " + info[item])
