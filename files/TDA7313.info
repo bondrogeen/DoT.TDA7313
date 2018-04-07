@@ -4,7 +4,7 @@
  "description": "Digital controlled  stereo audio processor with loudness.",
  "version": "0.0.3",
  "homepage": "",
- "files": ["TDA7313.init","TDA7313.info","TDA7313.lua","TDA7313.run","TDA7313_dark.html","TDA7313_light.html",],
+ "files": ["TDA7313.init","TDA7313.info","TDA7313.lua","TDA7313.run","TDA7313_dark.html","TDA7313_light.html"],
  "page": ["TDA7313_light.html", "TDA7313_dark.html"],
  "repository": {
   "type": "git",
