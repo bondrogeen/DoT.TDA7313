@@ -9,14 +9,14 @@ i2c.setup(0, 4, 3, i2c.SLOW)
 
 -- Setting multiple values
 t = {
-   {mode="Volume",value = 5}, -- value 0 to 63
-   {mode="LF",value = 15},    -- value 0 to 31
-   {mode="RF",value = 15},    -- value 0 to 31
-   {mode="LR",value = 15},    -- value 0 to 31
-   {mode="RR",value = 15},    -- value 0 to 31
-   {mode="input",value = 1},  -- value 1 to 3
-   {mode="bass",value = 7},   -- value 0 to 15
-   {mode="treble",value = 7}, -- value 0 to 15
+   Volume = 5, -- "Volume" value 0 to 63
+   lf = 15,    -- "Left Front" value 0 to 31
+   rf = 15,    -- "Right Front" value 0 to 31
+   lr = 15,    -- "Left Rear" value 0 to 31
+   rr = 15,    -- "Right Rear" value 0 to 31
+   input = 1,  -- "Input" value 1 to 3
+   bass = 7,   -- "Bass" value 0 to 15
+   treble = 7, -- "Treble" value 0 to 15
   }
   
 print(dofile("TDA7313.lua")(t))

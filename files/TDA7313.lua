@@ -3,7 +3,6 @@ local function set(val)
  local r=i2c.address(0,0x44,i2c.TRANSMITTER)
  i2c.write(0,val)
  i2c.stop(0)
- print(r)
  return r
 end
 local function save(m,v)
