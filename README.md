@@ -9,7 +9,7 @@ i2c.setup(0, 4, 3, i2c.SLOW)
 
 -- Setting multiple values
 t = {
-   Volume = 5, -- "Volume" value 0 to 63
+   volume = 5, -- "Volume" value 0 to 63
    lf = 15,    -- "Left Front" value 0 to 31
    rf = 15,    -- "Right Front" value 0 to 31
    lr = 15,    -- "Left Rear" value 0 to 31
@@ -23,7 +23,7 @@ print(dofile("TDA7313.lua")(t))
    
 -- or Setting one value
 
-print(dofile("TDA7313.lua")({mode="Volume",value = 15}))
+print(dofile("TDA7313.lua")({volume=15}))
 
 ```
 

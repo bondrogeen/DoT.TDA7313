@@ -4,7 +4,7 @@
  "description": "Digital controlled  stereo audio processor with loudness.",
  "version": "0.0.3",
  "homepage": "",
- "files": ["TDA7313.init","TDA7313.info","TDA7313.lua","TDA7313.run","TDA7313_dark.html","TDA7313_light.html"],
+ "files": ["TDA7313.init", "TDA7313.info", "TDA7313.lua", "TDA7313.run", "TDA7313_dark.html", "TDA7313_light.html"],
  "page": ["TDA7313_light.html", "TDA7313_dark.html"],
  "repository": {
   "type": "git",
@@ -15,104 +15,106 @@
   "name": "bondrogeen",
   "email": "bondrogeen@gmail.com"
  },
- "native": {
-  "run": {
-   "val":false,
-   "name":"Run"   
-  },
-  "input": {
-   "val":1,
-   "type":"select",
-   "values":[1,2,3],
-   "name":"Input"
-  },
-  "volume": {
-   "val":20,
-   "type":"number",
-   "min":0,
-   "max":63,
-   "name":"Volume"
-  },
-  "lf": {
-   "val":20,
-   "type":"number",
-   "min":0,
-   "max":31,
-   "name":"Left Front"
-  },
-  "rf": {
-   "val":20,
-   "type":"number",
-   "min":0,
-   "max":31,
-   "index":3,
-   "name":"Right Front"
-  },
-  "lr": {
-   "val":20,
-   "type":"number",
-   "min":0,
-   "max":31,
-   "name":"Left Rear"
-  },
-  "rr": {
-   "val":20,
-   "type":"number",
-   "min":0,
-   "max":31,
-   "name":"Right Rear"
-  },
-  "bass": {
-   "val":7,
-   "type":"number",
-   "min":0,
-   "max":15,
-   "name":"Bass"
-  },
-  "treble": {
-   "val":7,
-   "type":"number",
-   "min":0,
-   "max":15,
-   "name":"Treble"
-  },
-  "power": {
-   "val":0,
-   "values":[0,1],
-   "type":"select",
-   "name":"Power"
-  },
-  "mute": {
-   "val":0,
-   "values":[0,1],
-   "type":"select",
-   "name":"Mute"
-  },
-  "pin_p": {
-   "val":5,
-   "type":"select",
-   "values":[0,1,2,3,4,5,6,7,8,9,10],
-   "name":"GPIO Power"
-  },
-  "pin_m": {
-   "val":6,
-   "type":"select",
-   "values":[0,1,2,3,4,5,6,7,8,9,10],
-   "name":"GPIO Mute"
-  },
-  "sda": {
-   "val":4,
-   "type":"select",
-   "values":[1,2,3,4,5,6,7,8,9,10],
-   "name":"GPIO SDA"
-  },
-  "scl": {
-   "val":3,
-   "type":"select",
-   "values":[1,2,3,4,5,6,7,8,9,10],
-   "name":"GPIO SCL"
+ "native": [
+  {
+   "id": "run",
+   "val": false,
+   "type": "checkbox",
+   "name": "Run"
+  }, {
+   "id": "input",
+   "val": 1,
+   "type": "select",
+   "values": [1, 2, 3],
+   "name": "Input"
+  }, {
+   "id": "volume",
+   "val": 20,
+   "type": "number",
+   "min": 0,
+   "max": 63,
+   "name": "Volume"
+  }, {
+   "id": "lf",
+   "val": 20,
+   "type": "number",
+   "min": 0,
+   "max": 31,
+   "name": "Left Front"
+  }, {
+   "id": "rf",
+   "val": 20,
+   "type": "number",
+   "min": 0,
+   "max": 31,
+   "index": 3,
+   "name": "Right Front"
+  }, {
+   "id": "lr",
+   "val": 20,
+   "type": "number",
+   "min": 0,
+   "max": 31,
+   "name": "Left Rear"
+  }, {
+   "id": "rr",
+   "val": 20,
+   "type": "number",
+   "min": 0,
+   "max": 31,
+   "name": "Right Rear"
+  }, {
+   "id": "bass",
+   "val": 7,
+   "type": "number",
+   "min": 0,
+   "max": 15,
+   "name": "Bass"
+  }, {
+   "id": "treble",
+   "val": 7,
+   "type": "number",
+   "min": 0,
+   "max": 15,
+   "name": "Treble"
+  }, {
+   "id": "power",
+   "val": 0,
+   "values": [0, 1],
+   "type": "select",
+   "name": "Power"
+  }, {
+   "id": "mute",
+   "val": 0,
+   "values": [0, 1],
+   "type": "select",
+   "name": "Mute"
+  }, {
+   "id": "pin_p",
+   "val": 5,
+   "type": "select",
+   "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+   "name": "GPIO Power"
+  }, {
+   "id": "pin_m",
+   "val": 6,
+   "type": "select",
+   "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+   "name": "GPIO Mute"
+  }, {
+   "id": "sda",
+   "val": 4,
+   "type": "select",
+   "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+   "name": "GPIO SDA"
+  }, {
+   "id": "scl",
+   "val": 3,
+   "type": "select",
+   "values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+   "name": "GPIO SCL"
   }
- },
+ ],
  "license": "MIT",
  "modules": ["file", "gpio", "sjson", "i2c"]
 }
